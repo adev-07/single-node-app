@@ -1,5 +1,5 @@
 exports.jsonResponse = (res, statusCode, data = []) => {
-    const isSucces = statusCode < 200 || statusCode < 300;
+    const isSucces = statusCode < 300;
     const messsage = isSucces ? 'Successful' : 'Error';
 
     res.setHeader('Content-Type', 'application/json');

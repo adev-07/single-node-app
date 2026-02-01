@@ -6,18 +6,21 @@ class UserRepository {
             name: 'Arthur',
             email: 'arthur@gmail.com',
             password: '123456',
+            isActive: true
         },
         {
             id: 2,
             name: 'John',
             email: 'john@gmail.com',
             password: '123456',
+            isActive: true
         },
         {
             id: 3,
             name: 'Peter',
             email: 'peter@gmail.com',
             password: '123456',
+            isActive: true
         },
     ];
 

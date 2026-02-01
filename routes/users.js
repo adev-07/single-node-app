@@ -6,10 +6,10 @@ const userService = require('../services/userService');
 router.get('/', async (req, res) => {
     try {
         const users = await userService.getAllUsers();
-        if (!users || users.length === 0) res.json(jsonResponse(res, 404, 'No users found'));
-        res.json(jsonResponse(res, 200, users));
+        if (!users || users.length === 0) return jsonResponse(res, 404, 'No users found');
+        return jsonResponse(res, 200, users);
     } catch (error) {
-        res.json(jsonResponse(res, 400, error));
+        return jsonResponse(res, 400, error);
     }
 });
 

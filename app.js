@@ -8,13 +8,16 @@ app.use(express.json());
 
 
 // Auth Routes
-app.use('/login', require('./routes/login'));
+const checkActiveUserForLogin = require('./middlewares/checkActiveUserForLogin');
+app.use('/login', checkActiveUserForLogin, require('./routes/login'));
+
 app.use('/refresh-token', require('./routes/refresh-token'));
 app.use('/signup', require('./routes/signup'));
 app.use('/signout', require('./routes/signout'));
 
 // Users Routes
-app.use('/users', require('./routes/users'));
+const checkActiveUser = require('./middlewares/checkActiveUser');
+app.use('/users', checkActiveUser, require('./routes/users'));
 
 app.listen(3000, () => {
     console.log('App running in port 3000!');
